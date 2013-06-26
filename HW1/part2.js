@@ -9,7 +9,7 @@ var fs = require('fs'),
 while (primes.length <= 100) {
   isPrime = true;
   for (i in primes) {
-    if (number % primes[i] == 0) {
+    if (primes[i] <= Math.sqrt(number) && number % primes[i] == 0) {
       isPrime = false;
       break;
     }
@@ -17,7 +17,7 @@ while (primes.length <= 100) {
   if (isPrime) {
     primes.push(number);
   }
-  // 2 is the only even prime nmber
+  // skip even numbers as they cannot be prime
   number += 2;
 }
 
