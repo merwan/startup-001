@@ -21,10 +21,7 @@ while (primes.length <= 100) {
   number += 2;
 }
 
-for (i in primes) {
-  out += primes[i] + ',';
-}
-out = out.substring(0, out.length - 1);
+out = primes.join(',');
 
 fs.writeFileSync(outfile, out);
 console.log("Script: " + __filename + "\nWrote: " + out + "\nTo: " + outfile);
